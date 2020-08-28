@@ -5,11 +5,11 @@ set :stage, :production
 require "capistrano/deploy"
 require 'capistrano/rails'
 require 'capistrano/passenger'
-require 'capistrano/rvm'
+require 'capistrano/rbenv'
 
 
-set :rvm_type, :user
-set :rvm_ruby_version, '2.6.1'
+set :rbenv_type, :user
+set :rbenv_ruby, '2.6.1'
 
 # Load the SCM plugin appropriate to your project:
 #

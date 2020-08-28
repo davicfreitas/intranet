@@ -2,16 +2,16 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: database-name
+  database: qwerty
   pool: 5
-  username: postgres-user
-  password: password
+  username: postgres
+  password: credicope123!
 
 test:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: database-name-dev
+  database: qwerty-dev
   pool: 5
-  username: postgres-user
-  password: password
+  username: postgres
+  password: credicope123!
