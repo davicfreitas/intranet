@@ -1,10 +1,10 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 require 'capistrano/rails'
-set :application, "Intranet"
+set :application, "intranet"
 set :repo_url, "https://github.com/davicfreitas/intranet"
-set :deploy_to, '/home/deploy/intranet'
-append :linked_files, "config/database.yml", "config/secrets.yml"
+set :deploy_to, "/home/deploy/#{fetch :application}"
+
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads", "storage", "public/ckeditor_assets"
 
 
@@ -43,16 +43,3 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bund
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-namespace :db do
-    desc 'Resets DB without create/drop'
-    task :reset do
-      on primary :db do
-        within release_path do
-          with rails_env: fetch(:stage) do
-            execute :rake, 'db:schema:load'
-            execute :rake, 'db:seed'
-          end
-        end
-      end
-    end
-  end
