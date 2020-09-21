@@ -1,8 +1,8 @@
 ## Intranet 
 
-This is a simple intranet created with rails and materialize 
+Essa é uma intranet simples criada com Rails e Materialize
 
-### Prerequisites
+### Pré-requisitos:
 
 * ImageMagick (https://www.imagemagick.org)
 
@@ -11,31 +11,30 @@ sudo apt-get update
 sudo apt-get install imagemagick libmagickwand-dev
 ```
 
-### Installing
+### Instalação:
 
-This project use postgres as database, first you need to change the database config on file config/database.yml.example
+Este projeto utiliza o Postgres como banco de dados, primeiro você precisa alterar a configuração do banco de dados no arquivo: config/database.yml.example
 
 ```
-vim config/database.yml.example (make the changes and save the file)
+vim config/database.yml.example (faça as alterações e salve o arquivo)
 
-cp config/database.yml.example config/database.yml (create the database.yml config file)
+cp config/database.yml.example config/database.yml (crie o aquivo de configuração database.yml)
 ```
 
-Create database and migrations
+Crie o banco de dados e suas migrações
 
 ```
 rails db:create
 rails db:migrate
-rails db:seed (this will create some example posts)
+rails db:seed (isso irá criar alguns posts de exemplo)
 ```
-### Usage
+### Uso:
 
-* After start you app, you need to create an user to get access to the posts area, then log on and the menu will be available.
+* Após iniciar seu projeto, você precisa criar um usuário para ter acesso à área de posts. Após fazer login, o menu estará disponível.
 
 
-## Built With
+## Produzido com:
 * [Devise](https://github.com/plataformatec/devise)
 * [Ckeditor](https://ckeditor.com/)
 * [MaterializeCss](https://materializecss.com/)
-* [paperclip](https://github.com/thoughtbot/paperclip)
-
+* [PaperClip](https://github.com/thoughtbot/paperclip)
